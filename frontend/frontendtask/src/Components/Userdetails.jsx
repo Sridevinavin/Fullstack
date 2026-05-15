@@ -45,7 +45,7 @@ export default function Userdetails() {
                                 <th className="py-2">Email</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="text-center">
                             {users.map((user) => (
                                 <tr key={user.id} className="border-b">
                                     <td className="py-2">{user.name}</td>
