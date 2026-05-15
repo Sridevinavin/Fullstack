@@ -13,7 +13,7 @@ export default function Userdetails() {
         setLoading(true);
         setError("");
         try {
-            const response = await fetch(`http://localhost:3000/users?page=${currentPage}&limit=10`);
+            const response = await fetch(`http://localhost:8080/users?page=${currentPage}&limit=10`);
             if (!response.ok) {
                 throw new Error(`Error:${response.status}`);
             }
@@ -27,7 +27,6 @@ export default function Userdetails() {
             setLoading(false);
         }
     };
-
     return (
         <div className="p-2 border-2 w-2/4 mx-auto border-solid border-gray-300 rounded-lg shadow-md mt-4">
             <h1 className="text-xl font-bold mb-2">User directory</h1>
@@ -49,7 +48,7 @@ export default function Userdetails() {
                         <tbody>
                             {users.map((user) => (
                                 <tr key={user.id} className="border-b">
-                                    <td className="py-2">{user.username}</td>
+                                    <td className="py-2">{user.name}</td>
                                     <td className="py-2">{user.email}</td>
                                 </tr>
                             ))}
